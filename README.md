@@ -1,6 +1,3 @@
-<img src="./images/logo.svg" align="right"
-     alt="tf2-servers logo by bobair" width="170" height="170">
-
 # tf2-servers
 
 <p>
