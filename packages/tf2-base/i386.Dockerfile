@@ -14,7 +14,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 
 
 FROM steamcmd/steamcmd:ubuntu-20
-LABEL maintainer="garrappachc@gmail.com"
+LABEL maintainer="thmorriss@gmail.com"
 
 RUN export DEBIAN_FRONTEND=noninteractive \
   && export TZ=Etc/UTC \
