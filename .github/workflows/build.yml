@@ -33,8 +33,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ env.REGISTRY }}/melkortf/tf2-base
-            ${{ env.REGISTRY }}/melkortf/tf2-base/i386
+            ${{ env.REGISTRY }}/mgetf/tf2-base
+            ${{ env.REGISTRY }}/mgetf/tf2-base/i386
+
           tags: |
             type=sha,format=long
             type=schedule,pattern=nightly
@@ -77,8 +78,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ env.REGISTRY }}/melkortf/tf2-sourcemod
-            ${{ env.REGISTRY }}/melkortf/tf2-sourcemod/i386
+            ${{ env.REGISTRY }}/mgetf/tf2-sourcemod
+            ${{ env.REGISTRY }}/mgetf/tf2-sourcemod/i386
           tags: |
             type=sha,format=long
             type=schedule,pattern=nightly
@@ -121,8 +122,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ env.REGISTRY }}/melkortf/tf2-mge
-            ${{ env.REGISTRY }}/melkortf/tf2-mge/i386
+            ${{ env.REGISTRY }}/mgetf/tf2-mge
+            ${{ env.REGISTRY }}/mgetf/tf2-mge/i386
           tags: |
             type=sha,format=long
             type=schedule,pattern=nightly
