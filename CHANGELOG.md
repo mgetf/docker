@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.3](https://github.com/mgetf/docker/compare/v0.0.2...v0.0.3) (2025-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update Metamod:Source to version 1.12.0-git1219 ([#201](https://github.com/mgetf/docker/issues/201)) ([4186b03](https://github.com/mgetf/docker/commit/4186b03bda1c255c115e4505b595de7dbcde2f4b))
+* **deps:** update SourceMod to version 1.12.0-git7198 ([#203](https://github.com/mgetf/docker/issues/203)) ([3083a38](https://github.com/mgetf/docker/commit/3083a3870f82bc5e1e80621c8050f84338dce05a))
+
 ## [3.5.11](https://github.com/melkortf/tf2-servers/compare/3.5.10...3.5.11) (2025-05-01)
 
 ## [3.5.10](https://github.com/melkortf/tf2-servers/compare/3.5.9...3.5.10) (2025-04-30)
