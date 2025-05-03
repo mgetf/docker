@@ -35,9 +35,9 @@ RUN tar xf "${SOURCEBANS_FILE_NAME}" -C "${SERVER_DIR}/tf"
 RUN mv "${AFK_MANAGER_FILE_NAME}" "${SERVER_DIR}/tf/addons/sourcemod/plugins/${AFK_MANAGER_FILE_NAME}"
 
 # Cleanup
-RUN rm "${MGEMOD_PLUGIN_FILE_NAME}" "${SOURCEBANS_FILE_NAME}" "${AFK_MANAGER_FILE_NAME}" checksum.md5
+RUN rm "${MGEMOD_PLUGIN_FILE_NAME}" "${SOURCEBANS_FILE_NAME}"
 
-ENV SELECTED_MAP="mge_training_v8_beta4b"
+ENV SELECTED_MAP="mge_16badlands_v2"
 
 COPY server.cfg.template "${SERVER_DIR}/tf/cfg/server.cfg.template"
 COPY mapcycle.txt.template "${SERVER_DIR}/tf/cfg/mapcycle.txt.template"
