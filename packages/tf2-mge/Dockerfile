@@ -26,7 +26,7 @@ RUN \
 RUN md5sum -c checksum.md5
 
 # Install MGEmod
-RUN unzip "${MGEMOD_PLUGIN_FILE_NAME}" -d "${SERVER_DIR}/tf"
+RUN unzip -o "${MGEMOD_PLUGIN_FILE_NAME}" -d "${SERVER_DIR}/tf"
 
 # Install SourceBans
 RUN tar xf "${SOURCEBANS_FILE_NAME}" -C "${SERVER_DIR}/tf"
