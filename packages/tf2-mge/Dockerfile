@@ -8,32 +8,34 @@ COPY checksum.md5 .
 ARG MGEMOD_PLUGIN_FILE_NAME=mge.zip
 ARG MGEMOD_PLUGIN_VERSION=v0.2.2
 ARG MGEMOD_PLUGIN_URL=https://github.com/mgetf/MGEmod_tournament/releases/download/${MGEMOD_PLUGIN_VERSION}/mge.zip
+ARG SOURCEBANS_VERSION=1.6.4
+ARG SOURCEBANS_FILE_NAME=sourcebans-pp-${SOURCEBANS_VERSION}.plugin-only.tar.gz
+ARG SOURCEBANS_URL=https://github.com/sbpp/sourcebans-pp/releases/download/${SOURCEBANS_VERSION}/${SOURCEBANS_FILE_NAME}
+ARG AFK_MANAGER_URL=https://www.sourcemod.net/vbcompiler.php?file_id=170330
+ARG AFK_MANAGER_FILE_NAME=afk_manager4.smx
 
 RUN rm "${SERVER_DIR}/tf/addons/sourcemod/plugins/"{funcommands,funvotes}.smx
 
 # Download plugins
 RUN \
-  export SOURCEBANS_FILE_NAME="sourcebans-pp-1.6.4.plugin-only.tar.gz" && \
-  wget -nv "${MGEMOD_PLUGIN_URL}" && \
-  wget -nv "https://github.com/sbpp/sourcebans-pp/releases/download/1.6.4/${SOURCEBANS_FILE_NAME}" && \
-  wget -nv "https://www.sourcemod.net/vbcompiler.php?file_id=170330" -O "afk_manager4.smx"
+  wget -nv "${MGEMOD_PLUGIN_URL}" -O "${MGEMOD_PLUGIN_FILE_NAME}" && \
+  wget -nv "${SOURCEBANS_URL}" -O "${SOURCEBANS_FILE_NAME}" && \
+  wget -nv "${AFK_MANAGER_URL}" -O "${AFK_MANAGER_FILE_NAME}"
 
 # Verify checksums
 RUN md5sum -c checksum.md5
 
-# Install plugins
-RUN \
-  export SOURCEBANS_FILE_NAME="sourcebans-pp-1.6.4.plugin-only.tar.gz" && \
-  unzip -q "${MGEMOD_PLUGIN_FILE_NAME}" -d "${SERVER_DIR}/tf" && \
-  tar xf "${SOURCEBANS_FILE_NAME}" -C "${SERVER_DIR}/tf" && \
-  mv "afk_manager4.smx" "${SERVER_DIR}/tf/addons/sourcemod/plugins/afk_manager4.smx"
+# Install MGEmod
+RUN unzip -q "${MGEMOD_PLUGIN_FILE_NAME}" -d "${SERVER_DIR}/tf"
+
+# Install SourceBans
+RUN tar xf "${SOURCEBANS_FILE_NAME}" -C "${SERVER_DIR}/tf"
+
+# Move AFK Manager
+RUN mv "${AFK_MANAGER_FILE_NAME}" "${SERVER_DIR}/tf/addons/sourcemod/plugins/${AFK_MANAGER_FILE_NAME}"
 
 # Cleanup
-RUN \
-  export SOURCEBANS_FILE_NAME="sourcebans-pp-1.6.4.plugin-only.tar.gz" && \
-  rm "${MGEMOD_PLUGIN_FILE_NAME}" && \
-  rm "${SOURCEBANS_FILE_NAME}" && \
-  rm "checksum.md5"
+RUN rm "${MGEMOD_PLUGIN_FILE_NAME}" "${SOURCEBANS_FILE_NAME}" "${AFK_MANAGER_FILE_NAME}" checksum.md5
 
 ENV SELECTED_MAP="mge_training_v8_beta4b"
 
