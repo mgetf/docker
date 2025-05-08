@@ -21,7 +21,7 @@ RUN unzip -o "accelerator.zip" -d "${SERVER_DIR}/tf"
 #RUN unzip -o "${MGEMOD_PLUGIN_FILE_NAME}" -d "${SERVER_DIR}/tf"
 
 # Cleanup
-RUN rm "${MGEMOD_PLUGIN_FILE_NAME}" checksum.md5
+#RUN rm "${MGEMOD_PLUGIN_FILE_NAME}" checksum.md5
 
 ENV SELECTED_MAP="mge_16badlands_v2"
 
