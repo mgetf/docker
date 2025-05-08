@@ -11,12 +11,14 @@ ARG MGEMOD_PLUGIN_URL=https://github.com/mgetf/MGEmod_tournament/releases/downlo
 
 RUN rm "${SERVER_DIR}/tf/addons/sourcemod/plugins/"{funcommands,funvotes}.smx
 
-# Download plugins
-RUN \
-  wget -nv "${MGEMOD_PLUGIN_URL}" -O "${MGEMOD_PLUGIN_FILE_NAME}"
+RUN wget -nv "https://builds.limetech.io/files/accelerator-2.5.0-git138-cd575aa-linux.zip" -O "accelerator.zip"
+RUN unzip -o "accelerator.zip" -d "${SERVER_DIR}/tf"
 
 # Install MGEmod
-RUN unzip -o "${MGEMOD_PLUGIN_FILE_NAME}" -d "${SERVER_DIR}/tf"
+# Download plugins
+
+#RUN wget -nv "${MGEMOD_PLUGIN_URL}" -O "${MGEMOD_PLUGIN_FILE_NAME}"
+#RUN unzip -o "${MGEMOD_PLUGIN_FILE_NAME}" -d "${SERVER_DIR}/tf"
 
 # Cleanup
 RUN rm "${MGEMOD_PLUGIN_FILE_NAME}" checksum.md5
