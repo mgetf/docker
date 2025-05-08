@@ -6,7 +6,7 @@ LABEL maintainer="thmorriss@gmail.com"
 COPY checksum.md5 .
 
 ARG MGEMOD_PLUGIN_FILE_NAME=mge.zip
-ARG MGEMOD_PLUGIN_VERSION=v0.2.2
+ARG MGEMOD_PLUGIN_VERSION=v0.2.3
 ARG MGEMOD_PLUGIN_URL=https://github.com/mgetf/MGEmod_tournament/releases/download/${MGEMOD_PLUGIN_VERSION}/mge.zip
 
 RUN rm "${SERVER_DIR}/tf/addons/sourcemod/plugins/"{funcommands,funvotes}.smx
