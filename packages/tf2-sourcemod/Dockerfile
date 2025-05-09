@@ -24,7 +24,6 @@ ARG SOURCEMOD_TARBALL_URL=https://sm.alliedmods.net/smdrop/${SOURCEMOD_VERSION_M
 
 RUN wget -nv "${METAMOD_TARBALL_URL}" \
   && wget -nv "${SOURCEMOD_TARBALL_URL}" \
-  && md5sum -c checksum.md5 \
   && tar xf "${METAMOD_TARBALL_FILE_NAME}" -C "${SERVER_DIR}/tf" \
   && tar xf "${SOURCEMOD_TARBALL_FILE_NAME}" -C "${SERVER_DIR}/tf" \
   && rm "${METAMOD_TARBALL_FILE_NAME}" \
