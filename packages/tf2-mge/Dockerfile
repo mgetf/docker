@@ -6,7 +6,8 @@ LABEL maintainer="thmorriss@gmail.com"
 COPY checksum.md5 .
 
 ARG MGEMOD_PLUGIN_FILE_NAME=mge.zip
-ARG MGEMOD_PLUGIN_VERSION=v0.2.4
+ARG MGEMOD_PLUGIN_VERSION=v3.0.9
+#ARG MGEMOD_PLUGIN_VERSION=v0.2.4
 ARG MGEMOD_PLUGIN_URL=https://github.com/sapphonie/MGEMod/releases/download/${MGEMOD_PLUGIN_VERSION}/mge.zip
 # ARG MGEMOD_PLUGIN_URL=https://github.com/mgetf/MGEmod_tournament/releases/download/${MGEMOD_PLUGIN_VERSION}/mge.zip
 
