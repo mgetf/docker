@@ -1,7 +1,5 @@
-ARG REGISTRY=ghcr.io
-ARG TF2_SOURCEMOD_TAG=latest
 #FROM ${REGISTRY}/mgetf/tf2-sourcemod/i386:${TF2_SOURCEMOD_TAG}
-FROM ${REGISTRY}/melkortf/tf2-sourcemod/i386:${TF2_SOURCEMOD_TAG}
+FROM ghcr.io/melkortf/tf2-sourcemod/i386:latest
 
 LABEL maintainer="thmorriss@gmail.com"
 
