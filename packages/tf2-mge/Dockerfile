@@ -29,6 +29,7 @@ RUN mv mgemod_spawns.cfg "${SERVER_DIR}/tf/addons/sourcemod/configs/"
 #RUN rm "${MGEMOD_PLUGIN_FILE_NAME}" checksum.md5
 
 ENV SELECTED_MAP="mge_16badlands_v2"
+#ermt 
 
 COPY server.cfg.template "${SERVER_DIR}/tf/cfg/server.cfg.template"
 COPY mapcycle.txt.template "${SERVER_DIR}/tf/cfg/mapcycle.txt.template"
