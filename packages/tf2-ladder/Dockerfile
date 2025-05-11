@@ -7,7 +7,7 @@ COPY checksum.md5 .
 
 ARG LADDER_PLUGIN_FILE_NAME=ladder.zip
 
-ARG LADDER_PLUGIN_URL=https://github.com/mgetf/MGEmod_tournament/releases/download/v0.209.0/ladder.zip
+ARG LADDER_PLUGIN_URL=https://github.com/mgetf/MGEmod_tournament/releases/download/v0.211.0/ladder.zip
 
 RUN rm "${SERVER_DIR}/tf/addons/sourcemod/plugins/"{funcommands,funvotes}.smx
 
