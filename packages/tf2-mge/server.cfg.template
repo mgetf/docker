@@ -8,7 +8,6 @@ sv_password "${SERVER_PASSWORD}"
 sv_contact ""
 sv_tags ""
 
-sv_downloadurl "${DOWNLOAD_URL}"
 sv_allowdownload 1
 sv_allowupload 1
 
@@ -29,3 +28,5 @@ sv_alltalk 1
 mp_chattime 1
 mp_bonusroundtime 0
 mp_enableroundwaittime 0
+
+changelevel "${SELECTED_MAF}"
